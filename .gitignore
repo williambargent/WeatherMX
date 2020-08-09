@@ -1,0 +1,11 @@
+application/cache/*
+application/logs/*
+!application/*/.htaccess
+
+application/config/config.php
+application/config/database.php
+
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*

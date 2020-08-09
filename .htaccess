@@ -1,0 +1,65 @@
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:weathermx.williambargent.co.uk
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} (www\.)?weathermx.williambargent.co.uk
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:weathermx.williambargent.co.uk
+
+ErrorDocument 401 /../../.error-documents/400.html
+ErrorDocument 401 /../../.error-documents/401.html
+ErrorDocument 403 /../../.error-documents/403.html
+ErrorDocument 404 /../../.error-documents/404.html
+ErrorDocument 500 /../../.error-documents/500.html
+
+Options -Indexes
+Allow from All
+
+###
+ # WeatherMX - An elegant, free, open-source web application built to display data from CumulusMX; the weather stations data logger.
+ # https://github.com/williambargent/WeatherMX
+ #
+ # @author William Bargent code@williambargent.co.uk
+ # 
+ # @copyright Copyright (c) 2018, William Bargent
+ # @license AGPL-3.0
+ # 
+ #              GNU AFFERO GENERAL PUBLIC LICENSE
+ #                 Version 3, 19 November 2007
+ #
+ # This code is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU Affero General Public License, version 3,
+ # as published by the Free Software Foundation.
+ #
+ # This program is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ # GNU Affero General Public License for more details.
+ #
+ # You should have received a copy of the GNU Affero General Public License, version 3,
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>
+ #
+ ###
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Removes file extention from URL
+    RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME}/index.html !-f
+    RewriteCond %{REQUEST_FILENAME}/index.php !-f
+    RewriteRule . index.php [L]
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresDefault "access plus 1 year"
+    ExpiresByType text/html "access plus 600 seconds"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/ico "access plus 1 year"
+    ExpiresByType font/ttf  "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+</IfModule>
