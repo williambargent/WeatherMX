@@ -15,12 +15,26 @@ namespace App\Controllers;
 class Home extends BaseController {
 
     public function index() {
-        
         // Page title
         $data['page_title'] = 'William Bargent';
 
         return view('templates/header', $data)
              . view('templates/footer');
     }
+    public function about() {
+        // Page title
+        $data['page_title'] = 'About - William Bargent';
 
+        return view('templates/header', $data)
+             . view('about')
+             . view('templates/footer');
+    }
+    public function help() {
+        // Page title
+        $data['page_title'] = 'Help - William Bargent';
+
+        return view('templates/header', $data)
+             . view('help')
+             . view('templates/footer');
+    }
 }
