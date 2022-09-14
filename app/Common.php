@@ -1,15 +1,11 @@
 <?php
-
 /**
- * The goal of this file is to allow developers a location
- * where they can overwrite core procedural functions and
- * replace them with their own. This file is loaded during
- * the bootstrap process and is called during the frameworks
- * execution.
+ * WeatherMX - WeatherMX - an elegant, free, open-source web application built to display data form CumulusMX; the USB weather stations data logger.
+ * https://github.com/williambargent/WeatherMX
  *
- * This can be looked at as a `master helper` file that is
- * loaded early on, and may also contain additional functions
- * that you'd like to use throughout your entire application
+ * @author William Bargent code@williambargent.co.uk
+ * 
+ * @copyright Copyright (c) 2022, William Bargent
+ * @license AGPL-3.0 - https://github.com/williambargent/WeatherMX/blob/main/LICENSE_WEATHERMX
  *
- * @see: https://codeigniter4.github.io/CodeIgniter4/
- */
+ **/
