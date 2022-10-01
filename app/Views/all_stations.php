@@ -94,10 +94,10 @@
                     }
                 ?>
                     <a href="<?= base_url('stations?location='); ?>" class="card-link" data-jplist-item>
-                        <div class="card mb-3 <?php echo $stationCard['status']; ?> <?php echo $stationCard['featured']; ?> <?php echo $stationCard['partial']; ?>">
+                        <div class="card mb-3 <?= $stationCard['status']; ?> <?= $stationCard['featured']; ?> <= $stationCard['partial']; ?>">
                             <div class="row no-gutters">
                                 <div class="col-md-3">
-                                    <div class="map" id="map_<?php echo $station->url; ?>"></div>
+                                    <div class="map" id="map_<?= $station->url; ?>"></div>
                                 </div> <!-- END col-md-3 -->
                                 <div class="col">
                                     <div class="card-body">
@@ -108,17 +108,17 @@
                                                  <span class="badge badge-offline">Offline</span>
                                             <?php } ?>
                                         </div>
-                                        <h3 class="search name"><?php echo $station->name; ?></h3>
+                                        <h3 class="search name"><?= $station->name; ?></h3>
                                         <ul class="list-unstyled">
-                                            <li class="search owner"><span class="font-weight-bold">Owner:</span> <?php echo $station->owner; ?></li>
-                                            <li class="search model"><span class="font-weight-bold">Model:</span> <?php echo $station->hardware; ?></li>
+                                            <li class="search owner"><span class="font-weight-bold">Owner:</span> <?= $station->owner; ?></li>
+                                            <li class="search model"><span class="font-weight-bold">Model:</span> <?= $station->hardware; ?></li>
                                             <li class="distance hide">00.00</li>
                                             <li class="search status hide"></li>
                                         </ul>
                                         <div class="info">
-                                            <span class="search badge badge-info"><?php echo $station->timezone; ?></span>
-                                            <span class="badge badge-info"><?php echo $station->elevation; ?>m</span>
-                                            <span class="search badge badge-info"><?php echo $station->latitude . " " . $station->longitude; ?></span>
+                                            <span class="search badge badge-info"><?= $station->timezone; ?></span>
+                                            <span class="badge badge-info"><?= $station->elevation; ?>m</span>
+                                            <span class="search badge badge-info"><?= $station->latitude . " " . $station->longitude; ?></span>
                                         </div> <!-- END info -->
                                     </div> <!-- END card-body -->
                                     <div class="card-footer text-muted">
@@ -170,7 +170,7 @@
                                                         $timeAgo = "Error";
                                                     }
                                                 ?>
-                                                <p class="d-inline"> Reported <?php echo $timeAgo; ?></p>
+                                                <p class="d-inline"> Reported <?= $timeAgo; ?></p>
                                             </div>
                                             <div class="col-sm-4 sensors">
                                                 <p class="d-inline">Sensors: </p>
@@ -191,13 +191,13 @@
                             <div class="overlay"></div>
                         </div>
                         <script type="text/javascript">
-                            var map_<?php echo $station->url; ?> = L.map('map_<?php echo $station->url; ?>').setView([<?php echo $station->latitude; ?>, <?php echo $station->longitude; ?>], 13);
-                            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map_<?php echo $station->url; ?>);
-                            L.marker([<?php echo $station->latitude; ?>, <?php echo $station->longitude; ?>], {icon: L.divIcon({
+                            var map_<?= $station->url; ?> = L.map('map_<?= $station->url; ?>').setView([<?= $station->latitude; ?>, <?= $station->longitude; ?>], 13);
+                            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map_<?= $station->url; ?>);
+                            L.marker([<?= $station->latitude; ?>, <?= $station->longitude; ?>], {icon: L.divIcon({
                                 html: '<i class="bi bi-geo-alt-fill"></i>',
                                 iconAnchor: [15, 40],
                                 className: 'map-pointer'})
-                            }).addTo(map_<?php echo $station->url; ?>);
+                            }).addTo(map_<?= $station->url; ?>);
                         </script>
                     </a>
                 <?php } ?>
