@@ -44,7 +44,7 @@
                     </div> <!-- END fluid-container -->
                 </div> <!-- END disclamer -->
                 <!-- Javascript -->
-                <script type="text/javascript" src="assets/main.js"></script>
+                <script type="text/javascript" src="<?= base_url('assets/main.js') ?>"></script>
 	     </footer>            
         </div> <!-- END page-wrapper -->
     </body>
