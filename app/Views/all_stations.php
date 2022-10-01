@@ -93,7 +93,7 @@
                         $stationCard['partial'] = 'parial';
                     }
                 ?>
-                    <a href="<?= base_url('stations?location='); ?>" class="card-link" data-jplist-item>
+                    <a href="<?= base_url('stations?location=' . $station->url); ?>" class="card-link" data-jplist-item>
                         <div class="card mb-3 <?= $stationCard['status']; ?> <?= $stationCard['featured']; ?> <= $stationCard['partial']; ?>">
                             <div class="row no-gutters">
                                 <div class="col-md-3">
