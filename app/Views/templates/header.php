@@ -99,13 +99,13 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbar-inner">
                             <ul class="navbar-nav ml-auto">
-                                <li class="nav-item <?php if ($page_title == 'William Bargent') { echo 'active'; } ?>">
+                                <li class="nav-item <?php if (strpos($page_title, 'Home') !== FALSE) { echo 'active'; } ?>">
                                     <a class="nav-link" href="/">Home</a>
                                 </li>
-                                <li class="nav-item <?php if ($page_title == 'All Stations') { echo 'active'; } ?>">
+                                <li class="nav-item <?php if (strpos($page_title, 'All Stations') !== FALSE) { echo 'active'; } ?>">
                                     <a class="nav-link" href="/stations/all-stations">All Stations</a>
                                 </li>
-                                <li class="nav-item dropdown <?php if ($page_title == 'About') { echo 'active'; } ?>">
+                                <li class="nav-item dropdown <?php if (strpos($page_title, 'About') !== FALSE) { echo 'active'; } ?>">
                                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About <i class="bi bi-caret-down-fill"></i></a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="/about#data">The Data</a>
@@ -119,10 +119,10 @@
                                         <a class="dropdown-item" href="https://github.com/williambargent/WeatherMX">GitHub Project</a>
                                     </div> <!-- END dropdown-menu -->
                                 </li>
-                                <li class="nav-item <?php if ($page_title == 'Help') { echo 'active'; } ?>">
+                                <li class="nav-item <?php if (strpos($page_title, 'Help') !== FALSE) { echo 'active'; } ?>">
                                     <a class="nav-link" href="/help">Help</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item <?php if (strpos($page_title, 'Admin') !== FALSE) { echo 'active'; } ?>">
                                     <a class="nav-link" href="https://identity.williambargent.co.uk">Admin</a>
                                 </li>
                             </ul>

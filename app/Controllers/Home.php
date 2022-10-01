@@ -16,7 +16,28 @@ class Home extends BaseController {
 
     public function index() {
         // Page title
-        $data['page_title'] = 'William Bargent';
+        $data['page_title'] = 'Home - William Bargent';
+        
+        $db = \Config\Database::connect();
+        $query   = $db->query('SELECT * FROM stations');
+        $data['stationsAll'] = $query->getResult();
+        
+        foreach ($data['stationsAll'] as $station) {
+            
+            $db2 = \Config\Database::connect('cumlusmx');
+            $query2   = $db2->query("SELECT LogDateTime FROM " . $station->table_realtime . " ORDER BY LogDateTime DESC LIMIT 1");
+            $timeSince = $query2->getResult();
+            $timeSince = time() - strtotime($timeSince[0]->LogDateTime);
+            $data['lastReported'][$station->url] = $timeSince;
+        }
+
+        return view('templates/header', $data)
+             . view('all_stations', $data)
+             . view('templates/footer');
+    }
+    public function allStations() {
+        // Page title
+        $data['page_title'] = 'All Stations - William Bargent';
         
         $db = \Config\Database::connect();
         $query   = $db->query('SELECT * FROM stations');

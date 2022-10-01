@@ -17,7 +17,7 @@
 <!-- jplist-es6 Load -->
 <script src="<?= base_url('/assets/jplist-es6-1.2.0/jplist-es6.min.js') ?>"></script>
 
-<div class="all-stations" id="station-filter">
+<div class="all-stations <?php if (strpos($page_title, 'All Stations') !== FALSE){ echo 'all'; } else { echo 'index'; } ?>" id="station-filter">
     <div class="row">
         <div class="col">
             <div class="filter-control jplist-panel">
