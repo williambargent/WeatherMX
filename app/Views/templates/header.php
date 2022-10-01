@@ -46,7 +46,7 @@
         <link rel="dns-prefetch" href="https://stackpath.bootstrapcdn.com">
         <link rel="dns-prefetch" href="https://code.jquery.com">
         <link rel="dns-prefetch" href="https://unpkg.com">
-        <link rel="dns-prefetch" href="https://api.tiles.mapbox.com">
+        <link rel="dns-prefetch" href="https://tile.openstreetmap.org">
         
         <link rel="manifest" href="/assets/img/logo/manifest.json">
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/favicon-32x32.png">
